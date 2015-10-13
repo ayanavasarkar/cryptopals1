@@ -1,0 +1,47 @@
+import sys
+import base64
+import sys
+data = sys.argv[1].decode('hex')
+output = base64.b64encode(data)
+print output
+print base64.b16encode(base64.b64decode(output))
+
+import base64
+
+s = '49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d'
+expected = 'SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t'
+
+def hex_str_to_base64(s):
+    return base64.b64encode(s.decode('hex'))
+
+assert hex_str_to_base64(s) == expected
+
+
+
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+
+class prob1
+{
+	
+
+
+    public static void main(String[]args) throws Exception {
+        final String str_inp = "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d";
+        final byte[] authBytes = s.getBytes(StandardCharsets.UTF_8);
+        final String encoded = Base64.getEncoder().encodeToString(authBytes);
+        int l=encoded.length();
+        System.out.println(l);
+        String si=encoded.substring(0,l);
+        System.out.println(s);
+        System.out.println(si);
+    
+}
+}
+
+PROBLEM--2
+
+from binascii import unhexlify, hexlify
+	s1 = "1c0111001f010100061a024b53535009181c"
+	s2="686974207468652062756c6c277320657965"
+	hexlify(''.join(chr(ord(c1) ^ ord(c2)) for c1, c2 in zip(unhexlify(s1[-len(s2):]), unhexlify(s2))))
